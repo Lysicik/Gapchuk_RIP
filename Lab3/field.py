@@ -24,6 +24,7 @@ goods = [
 
 
 def field(items, *args):
+    #кол-во аргументов
     assert len(args) > 0
 
     if len(args) == 1:
@@ -40,9 +41,8 @@ def field(items, *args):
                 yield res
 
 
-#f = field(goods, 'title', 'price')
-
-#print(next(f))
-#print(next(f))
-#print(next(f))
+# f = field(goods, 'title', 'price')
+#
+# print(next(f))
+# print(next(f))
 

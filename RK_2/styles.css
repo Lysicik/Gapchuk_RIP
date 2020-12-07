@@ -1,0 +1,15 @@
+  
+       TABLE{
+           background: white; /* Цвет фона таблицы */
+           color: black; /* Цвет текста */
+           border: 1px solid black;
+           border-collapse: collapse;
+       }
+        TD,TH{
+            background: white; /* Цвет фона ячеек */
+            border: 1px solid black;
+        }
+        .color{
+            background: hotpink;
+            color:white;
+        }
