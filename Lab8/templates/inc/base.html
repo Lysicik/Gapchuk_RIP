@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Cars</title>
+
+    <link rel="shortcut icon" href="{% static "img/logo.jpg" %}" type="image/png">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+{% include 'inc/header.html' %}
+
+<main role="main" class="flex-shrink-0 mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <ul class="list-group">
+                  <li class="list-group-item active">Как Вам автомобиль?!</li>
+                </ul>
+            </div>
+            <div class="col-9">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include 'inc/footer.html' %}
+
+<script src="{% static "js/jquery-3.5.1.min.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+
+
+<script src="https://kit.fontawesome.com/8ee5ae06c6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
