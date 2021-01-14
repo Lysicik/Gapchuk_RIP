@@ -1,8 +1,8 @@
 from behave import *
-from Lab4.wrapper import RoundDetail
-from Lab4.wrapper import RoundHole
-from Lab4.wrapper import SquareDetail
-from Lab4.wrapper import SquareDetailAdapter
+from wrapper import RoundDetail
+from wrapper import RoundHole
+from wrapper import SquareDetail
+from wrapper import SquareDetailAdapter
 
 
 @given('size of round detail - radius "{detail_size}" and size of round hole - "{hole_radius}"')

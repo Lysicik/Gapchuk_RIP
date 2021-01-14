@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style type="text/css">
+   BODY {
+    background: url(https://i1.wallbox.ru/wallpapers/main/201327/oblaka-kak-vata-3743ba0.jpg) no-repeat; /* Параметры фона */
+   }
+  </style>
+
+</head>
+
+<body>
+<div class="left-ads-display col-lg-8">
+    <div class="row">
+
+        <div class="desc1-right col-md-6 pl-lg-4">
+            <h3 class="editContent" style="outline: none; cursor: inherit;">
+              <div class="alert alert-info" role="alert">
+              <h1>{{ book.title }}</h1>
+                </div>
+            </h3>
+            <h5 class="editContent"></h5>
+
+
+                <li style="list-style: none">
+                <div class="alert alert-info" role="alert">    <span><b>Слоган:</b>
+                        {{  book.tagline }}
+                  </span>
+                    </div>
+                </li>
+                <li style="list-style: none">
+                 <div class="alert alert-info" role="alert">
+                     <span><b>Описание:</b>
+                                      {{ book.description }}
+                                  </span>
+                 </div>
+                </li>
+                <li style="list-style: none">
+                <div class="alert alert-info" role="alert">
+                                    <span><b>Автор:</b>
+                                        {% for author in book.authors.all %}
+                                            {{ author.name }}
+                                        {% endfor %}
+                                    </span>
+                </div>
+                </li>
+                <li style="list-style: none">
+                <div class="alert alert-info" role="alert">
+                                    <span><b>Описание автора:</b>
+                                        {% for author in book.authors.all %}
+                                            {{ author.description }}
+                                        {% endfor %}
+                                    </span>
+                </div>
+                </li>
+                                </span>
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-info"><a href="/">Назад</a></button>
+</body>
+</html>
+

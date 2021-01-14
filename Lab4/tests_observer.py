@@ -1,8 +1,7 @@
 from unittest import TestCase
-from termcolor import colored
-from Lab4.observer import SneakersSubscriber
-from Lab4.observer import HoodiesSubscriber
-from Lab4.observer import StorePublisher
+from observer import SneakersSubscriber
+from observer import HoodiesSubscriber
+from observer import StorePublisher
 
 
 class ObserverTestCase(TestCase):
@@ -37,7 +36,7 @@ class ObserverTestCase(TestCase):
         store = StorePublisher()
         sneakers_subscriber = SneakersSubscriber("Name1")
         store.new_goods = "кроссовки"
-        self.assertEqual(colored("SneakersSubscriber:", 'green') +
+        self.assertEqual("SneakersSubscriber:" +
                          f"{sneakers_subscriber.name} реагирует на новое поступление кроссовок",
                          sneakers_subscriber.update(store))
 
@@ -53,7 +52,7 @@ class ObserverTestCase(TestCase):
         store = StorePublisher()
         hoodies_subscriber = HoodiesSubscriber("Name1")
         store.new_goods = "толстовка"
-        self.assertEqual(colored("SneakersSubscriber:", 'green') +
+        self.assertEqual("HoodiesSubscriber:" +
                          f"{hoodies_subscriber.name} реагирует на новое поступление толстовки",
                          hoodies_subscriber.update(store))
 

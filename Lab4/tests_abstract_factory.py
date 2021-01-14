@@ -1,9 +1,9 @@
 import unittest
 from unittest import TestCase
 from unittest.mock import patch
-from Lab4.abstract_factory import WinFactory
-from Lab4.abstract_factory import MacFactory
-from Lab4.abstract_factory import LinuxFactory
+from abstract_factory import WinFactory
+from abstract_factory import MacFactory
+from abstract_factory import LinuxFactory
 
 
 class AbstractFactoryTestCase(TestCase):

@@ -4,7 +4,7 @@
 
 
 from abc import ABC, abstractmethod
-from termcolor import colored
+
 
 
 # абстрактный класс издателя
@@ -40,14 +40,14 @@ class StorePublisher(Publisher):
 
     def attach(self, subscriber):
         self.subscribers.append(subscriber)
-        return colored("Publisher:", 'red') + f"Добавлен новый подписчик с ником {subscriber.name}"
+        return "Publisher:" + f"Добавлен новый подписчик с ником {subscriber.name}"
 
     def detach(self, subscriber):
         self.subscribers.remove(subscriber)
-        return colored("Publisher:", 'red') + f"Удален подписчик с ником {subscriber.name}"
+        return "Publisher:" + f"Удален подписчик с ником {subscriber.name}"
 
     def notify(self):
-        print(colored("Publisher:", 'red'), "Оповещаю подписчиков...")
+        print("Publisher:" + "Оповещаю подписчиков...")
         subscribers_reacts = []
         for subscriber in self.subscribers:
             subscribers_reacts.append(subscriber.update(self))
@@ -57,7 +57,7 @@ class StorePublisher(Publisher):
 
     def goods_arrival(self, goods):
         self.new_goods = goods
-        print(colored("Publisher:", 'red'), f"Поступил новый товар - {self.new_goods}")
+        print("Publisher:" + f"Поступил новый товар - {self.new_goods}")
         self.notify()
 
 
@@ -69,7 +69,7 @@ class SneakersSubscriber(Subscriber):
 
     def update(self, publisher):
         if publisher.new_goods == "кроссовки":
-            react = colored("SneakersSubscriber:", 'green') + f"{self.name} реагирует на новое поступление кроссовок"
+            react = "SneakersSubscriber:" + f"{self.name} реагирует на новое поступление кроссовок"
             return react
         else:
             return 1
@@ -83,7 +83,7 @@ class HoodiesSubscriber(Subscriber):
 
     def update(self, publisher):
         if publisher.new_goods == "толстовка":
-            react = colored("SneakersSubscriber:", 'green') + f"{self.name} реагирует на новое поступление толстовки"
+            react = "HoodiesSubscriber:" + f"{self.name} реагирует на новое поступление толстовки"
             return react
         else:
             return 1
